@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+const applicationPort = process.env.PORT || 3000;
 
 var app = express();
 app.set('view engine', 'hbs');
@@ -15,7 +16,6 @@ app.get('/', (req, res) => {
     res.render('index.hbs', templateValues);
 });
 
-var serverPort = 3000;
-app.listen(serverPort, () => {
-    console.log(`Running Node Express Web Server on port ${serverPort}.`);
+app.listen(applicationPort, () => {
+    console.log(`Running Node Express Web Server on port ${applicationPort}.`);
 });
